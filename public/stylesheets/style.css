@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Quicksand', sans-serif;
+
+}
+h2 {
+  font-size: 7vmin;
+}
+
+nav {
+  background-color: rgb(228, 228, 228);
+  font-size: 3vmin;
+  padding: 1vmin;
+}
+
+nav > a {
+  padding: 2vmin;
+}
+
+a {
+  color: #73ca83;
+}
+
+a:hover {
+  color: #63e47a;
+}
+
+table {
+  font-size: 3vmin;
+}
+
+#flight-list-row {
+  font-size: 2vmin;
+}
+
+button {
+  font-family: 'Quicksand', sans-serif;
+}
