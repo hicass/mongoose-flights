@@ -40,12 +40,27 @@
     <button type="submit">Add</button>
 </form>
 
-<h4>Tickets:</h4>
-<ul>
-    <% tickets.forEach(function(t) { %>
+<% if (tickets.length) { %>
+    <table>
+        <thead>
+            <tr>
+                <th>Seat</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% tickets.forEach(function(t) { %>
+                <tr>
+                    <td><%= t.seat %></td>
+                    <td><%= t.price %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+<%  } else { %>
+    <h5>No tickets yet...</h5>
+<% } %>
 
-    <% }) %>
-</ul>
 <a href="/flights/<%= flight._id %>/tickets/new">Add Ticket</a>
 
 <%- include('../partials/footer') %>
