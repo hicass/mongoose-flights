@@ -5,7 +5,8 @@ module.exports = {
     index,
     new: newFlight,
     create,
-    show
+    show,
+    addTicket
 }
 
 async function index(req, res) {
@@ -35,4 +36,8 @@ async function show(req, res) {
     const tickets = await Ticket.find({flight: flight._id});
 
     res.render('flights/show', {title: 'Flight Details', flight, tickets});
+}
+
+async function addTicket(req, res) {
+    res.render('tickets/new');
 }

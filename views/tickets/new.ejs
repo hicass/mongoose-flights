@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+
+<h3>Add New Ticket</h3>
+<form action="/tickets" method="POST">
+    <label>
+        Seat:
+        <input type="string" name="seat">
+    </label><br>
+    <label>
+        Price:
+        <input type="number" name="price">
+    </label><br>
+</form>
+
+<%- include('../partials/footer') %>
