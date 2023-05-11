@@ -20,7 +20,7 @@
             <% flight.destinations.forEach(function(d) { %>
                 <tr>
                     <td>airport<%= d.airport %></td>
-                    <td>arrival<%= d.arrival %></td>
+                    <td>arrival<%= d.arrival.toLocaleDateString() %></td>
                 </tr>
             <% }); %>
         </tbody>
