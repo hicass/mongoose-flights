@@ -6,7 +6,7 @@
     <p>Airline: <%= flight.airline %></p>
     <p>Airport: <%= flight.airport %></p>
     <p>Flight Number: <%= flight.flightNo %></p>
-    <p>Departure Time: <%= flight.departs %></p>
+    <p>Departure: <%= flight.departs.toLocaleString() %></p>
 </div>
 
     <table>
@@ -19,8 +19,8 @@
         <tbody>
             <% flight.destinations.forEach(function(d) { %>
                 <tr>
-                    <td>airport<%= d.airport %></td>
-                    <td>arrival<%= d.arrival.toLocaleDateString() %></td>
+                    <td><%= d.airport %></td>
+                    <td><%= d.arrival.toLocaleDateString() %></td>
                 </tr>
             <% }); %>
         </tbody>

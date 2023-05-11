@@ -11,6 +11,9 @@ module.exports = {
 
 async function index(req, res) {
     const flights = await Flight.find({});
+    flights.sort(function(a, b) {
+        return a.departs - b.departs;
+    });
     res.render('flights/index', { flights });
 }
 
@@ -34,6 +37,8 @@ async function create(req, res) {
 async function show(req, res) {
     const flight = await Flight.findById(req.params.id);
     const tickets = await Ticket.find({flight: flight._id});
-    console.log('tickets: ', tickets);
+    flight.destinations.sort(function(a, b) {
+        return a.arrival - b.arrival;
+    });
     res.render('flights/show', {title: 'Flight Details', flight, tickets});
 }
